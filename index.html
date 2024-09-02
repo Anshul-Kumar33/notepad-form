@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="notepad">
+        <h2>My Notepad</h2>
+        
+        <form id="notepad-form" action="save.php" method="POST">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="batch-time">Batch Timing:</label>
+            <input type="text" id="batch-time" name="batch_time" placeholder="Enter batch timing" required>
+            
+            <label for="demo-practice">Demo/Practice:</label>
+            <input type="text" id="demo-practice" name="demo_practice" placeholder="Demo or Practice" required>
+            
+            <h3>Checklist:</h3>
+            <ul id="checklist">
+                <!-- Checklist items will be added here dynamically -->
+            </ul>
+            <input type="text" id="new-item" placeholder="Add new item">
+            <button type="button" onclick="addItem()">Add Item</button>
+            
+            <input type="hidden" id="checklist-items" name="checklist">
+            
+            <h3>Notes:</h3>
+            <textarea id="notes" name="notes" rows="5" placeholder="Enter your notes here..." required></textarea>
+            
+            <button type="submit">Save</button>
+        </form>
+        
+        <h3>Saved Notes:</h3>
+        <div id="saved-notes">
+            <!-- Retrieved notes will be displayed here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
